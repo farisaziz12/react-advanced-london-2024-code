@@ -66,7 +66,7 @@ export default function Home() {
 }
 
 export const getServerSideProps = async () => {
-  const prefetch = createPrefetch(new QueryClient(), 2_000);
+  const prefetch = createPrefetch(new QueryClient(), 500);
 
   await prefetch.optionalQuery([QUERY_KEY, QUANTITY], async () => {
     const res = await fetch(`http://localhost:3000/api/faker?quantity=${QUANTITY}`);
